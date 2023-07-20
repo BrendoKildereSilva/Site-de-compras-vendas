@@ -2,7 +2,7 @@
     <div>
         <h2>Login</h2>
 
-    <div class="container-mensagem-de-erro">
+    <div class="container-mensagem-de-erro" v-if="this.ShowMensagemDeErro">
             <p>
              {{ MesangemDeErro }}
             </p>
@@ -11,7 +11,7 @@
         v-if="this.LoginComponent1 == true"
         :PropsMesangemDeErro="MesangemDeErro"
         @Entrar="EmicaoEntrar"
-        @MensagemDeErro="FunctionMensagemDeErro"
+        @MensagemDeErro="EmisaoFunctionMensagemDeErro"
         ></Login01>
 
         <Login02 
@@ -36,6 +36,7 @@ import axios from 'axios';
 export default {
     data(){
         return{
+            ShowMensagemDeErro: false,
             MesangemDeErro:'',
             // 
             LoginComponent1: true,
@@ -63,8 +64,10 @@ export default {
 
                 if(mensagem == 'Dados invalidos'){
                     this.MesangemDeErro = mensagem
+                    this.ShowMensagemDeErro = true
                 }
                 else if(mensagem == 'Apenas o email é valido'){
+                    this.ShowMensagemDeErro = false
                     
                     this.MesangemDeErro = mensagem
                     this.UrlFotoPerfilUser = foto_perfil
@@ -76,12 +79,15 @@ export default {
                 }
                 else if(mensagem == 'Dados validos'){
                     this.MesangemDeErro = mensagem
+                    this.ShowMensagemDeErro = true
+
                 }
             })
         },
 
-        FunctionMensagemDeErro(Situcao){
-           this.MesangemDeErro = Situcao
+        EmisaoFunctionMensagemDeErro(Situcao){
+            this.ShowMensagemDeErro = true
+            this.MesangemDeErro = Situcao
         },
     },
 
