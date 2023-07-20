@@ -2,6 +2,7 @@
 $this->layout('master'); 
 use app\database\Connection;
 use Firebase\JWT\JWT;
+use app\functions\functions;
 use Firebase\JWT\Key;
 header("Access-Control-Allow-Origin: *");
     
@@ -46,11 +47,16 @@ if($resultado_email_and_senha >= 1){
 }
 else if($resultado_email >= 1){
     // se apenas o email for correto vou enviar apenas foto de perfil do user para confirmar se a conta realmente o pertece
-
     $Dados = $cod_mysql_confirm_email->fetchALL(PDO::FETCH_ASSOC);
-    
+    // 
+    // 
+    $local_todas_imagens = functions::urls()['banco-de-imagens']['foto_perfil_users'];
+    $name_foto_perfil = $Dados[0]['foto_perfil'];
+    //
+    // 
     $_resposta_client['mensagem'] = 'Apenas o email é valido';
-    $_resposta_client['foto_perfil'] = 'foto_perfil';
+    $_resposta_client['foto_perfil'] = $local_todas_imagens . $name_foto_perfil;
+    ;
 
 
 }
