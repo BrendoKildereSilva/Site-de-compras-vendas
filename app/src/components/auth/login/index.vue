@@ -65,6 +65,7 @@ export default {
                     this.MesangemDeErro = mensagem
                 }
                 else if(mensagem == 'Apenas o email é valido'){
+                    
                     this.MesangemDeErro = mensagem
                     this.UrlFotoPerfilUser = foto_perfil
 

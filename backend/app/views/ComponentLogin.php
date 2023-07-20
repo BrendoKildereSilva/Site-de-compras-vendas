@@ -50,8 +50,7 @@ else if($resultado_email >= 1){
     $Dados = $cod_mysql_confirm_email->fetchALL(PDO::FETCH_ASSOC);
     
     $_resposta_client['mensagem'] = 'Apenas o email é valido';
-    $_resposta_client['Dados']['foto_perfil'] = $Dados;
-    $_resposta_client['Dados']['Diretorio'] = 'http://localhost/projetos/Vue%20+%20php/ex02/backend/banco-imagens/foto_perfil_users/ ';
+    $_resposta_client['foto_perfil'] = 'foto_perfil';
 
 
 }
