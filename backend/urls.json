@@ -1,3 +1,5 @@
 {
-    "Url" : ""
+    "banco-de-imagens":{
+        "url_imagens_foto_perfil_users": "http://localhost:8080/banco-de-imagens/foto_perfil_users/"
+    }
 }
