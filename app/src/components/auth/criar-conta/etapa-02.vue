@@ -1,10 +1,11 @@
 <template>
+<div id="container-body">
     <div class="container-main">
 
             
             <p v-if="this.ExisteImagem == false" >Que tal adicionar uma foto? 😎</p>
             <div class="preview-imagem"> 
-                <img :src="URLPreview">
+                <img :src="URLPreview" v-if="this.ExisteImagem == true">
             </div>
 
 
@@ -17,11 +18,13 @@
             <label 
             v-if="this.ExisteImagem == false"
             for="input-file"
+            class="button-padrao-01"
             >Adicionar foto
             </label>
 
             <label 
             v-else
+            class="button-padrao-01"
             @click.prevent="ExcluirImagem"
             >Exlucir imagem
             </label>
@@ -29,13 +32,16 @@
             <p class="mensagem-de-erro">
                 {{ MenasagemDeErro}}
             </p>
-
-            <div class="container-button">
-                <button @click.prevent="VoltarEtapa">voltar</button>
-                <button @click.prevent="EmicaoCriarConta" class="criar-conta">Criar conta</button>
-            </div> 
-
         </div>
+
+        <div class="container-button">
+                <button @click.prevent="VoltarEtapa" class="button-padrao-02">voltar</button>
+                <button @click.prevent="EmicaoCriarConta" class="button-padrao-01">Criar conta</button>
+        </div> 
+
+        
+
+</div>
 
 </template>
 
@@ -133,11 +139,14 @@ export default {
 <style lang="scss" scoped>
 
 
+#container-body{
+    width: 100%;
+}
 
 .container-main{
+    width: 90%;
     margin: 0 auto;
     display: flex;
-    width: 100%;
     flex-direction: column;
     align-items: center;
     justify-content: center;
@@ -147,10 +156,10 @@ export default {
         text-align: center;
     }
     .preview-imagem{
-        width: 16rem;
-        height: 16rem;
+        margin: 1rem 0rem;
+        width: 20rem;
+        height: 20rem;
         border: 0.1rem dashed $primary01;
-        border-radius: 50%;
         margin-bottom: 1rem;
         overflow: hidden;
         display: flex;
@@ -165,74 +174,59 @@ export default {
         display: none;
     }
 
-    label{
+
+    .button-padrao-01{
         display: flex;
         justify-content: center;
         align-items: center;
-        width: 100%;
-        background: linear-gradient(267deg, $primary01 0%, $primary02 100%);
-        border-radius: 3rem;
-        color: #fff;
-        cursor: pointer;
-        height: 3rem;
-    }
 
-    label:hover{
-        background: linear-gradient(267deg, $primary03 0%, $primary02 100%);
+        height: 2.5rem;
+        border-radius: 10rem;
+        width: 100%;
     }
 
     .mensagem-de-erro{
         color: $red01;
         font-size: 1.5rem;  
     }
+}
 
-    .container-button{
-        margin: 4rem 0rem 0rem 0rem;
-        display: flex;
-        width: 100%;
-        justify-content: space-between;
+.container-button{
+    margin: 1rem 0rem;
+    display: flex;
+    justify-content: space-between;
 
-        button{
-            font-size: 1.5rem;
-            background: transparent;
-            border: 0px;
-            cursor: pointer;
-            color: $cinza01;
-        }
-
-        button:hover{
-            color: $primary02;
-        }
-
-        .criar-conta{
-            font-size:1.5rem;
-            color: #fff;
-            border-radius: 1rem;
-            padding: 0.5rem 1rem;
-            background: linear-gradient(267deg, $primary01 0%, $primary02 100%);
-
-        }
-
-        .criar-conta:hover{
-            color: #fff;
-            background: linear-gradient(267deg, $primary03 0%, $primary02 100%);
-
-        }
+    .button-padra01{
+        width: 9rem;
     }
-
-    
 }
 
 
 @media(max-width: 960px){
     .container-main{
-        width: 50%;
+        width: 100%;
+
     }
 }
 
 @media(max-width: 700px){
     .container-main{
-        width: 100%;
+        width: 90%;
+
+        .preview-imagem{
+            height: 30rem;
+            width: 30rem;
+        }
+    }
+}
+
+@media(max-width: 350px){
+    .container-main{
+
+        .preview-imagem{
+            height: 20rem;
+            width: 20rem;
+        }
     }
 }
 

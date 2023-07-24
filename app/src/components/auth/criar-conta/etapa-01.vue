@@ -4,7 +4,7 @@
             <div>
                 <input 
                 type="text" 
-                d="input-nome" 
+                id="input-nome" 
                 @keyup="ValidarCampoNome" 
                 v-model="nome" required
                 class="input-padrao"
@@ -85,10 +85,11 @@
         </div>
 
         <div class="container-button">
-            <button @click.prevent="HiddenOrShowPassowrd" class="button-visualizar-senhas">
+            <button @click.prevent="HiddenOrShowPassowrd" 
+            class="button-padrao-01">
                 {{ TextButtonHiddenOrShowPassowrd }}
             </button>
-            <button @click.prevent="ProximaEtapa">Proxima etapa</button>
+            <button @click.prevent="ProximaEtapa" class="button-padrao-02">Proxima etapa</button>
         </div>
 
     </div>
@@ -96,14 +97,6 @@
 
 <style lang="scss" scoped>
 
-
-
-
-
-.input-padrao:focus + .label-com-animacao{
-    top: -15px;
-    left: 0px;
-}
 
 label{
     transition: 0.2s;
@@ -139,31 +132,6 @@ label{
     margin: 3rem 0rem;
     display: flex;
     justify-content: space-between;
-
-    button{
-        background: transparent;
-        color: $cinza01;
-        border: 0px;
-        cursor: pointer;
-        font-size: 1.4rem;
-    }
-
-    .button-visualizar-senhas{
-        background: $primary01;
-        color: #fff;
-        border-radius: 1rem;
-        padding: 0.5rem;
-    }
-
-    .button-visualizar-senhas:hover{
-        background: $primary03;
-        color: #fff;
-    }
-
-
-    button:hover{
-        color: $primary03;
-    }
 }
 
 @media(max-width: 500px){

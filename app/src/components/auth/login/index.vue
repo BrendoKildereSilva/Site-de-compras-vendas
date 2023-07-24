@@ -2,7 +2,7 @@
     <div>
         <h2>Login</h2>
 
-    <div class="container-mensagem-de-erro" v-if="this.ShowMensagemDeErro">
+    <div class="button-padrao-01" v-if="this.ShowMensagemDeErro">
             <p>
              {{ MesangemDeErro }}
             </p>
@@ -40,7 +40,7 @@ export default {
             MesangemDeErro:'',
             // 
             LoginComponent1: true,
-            LoginComponent2: true,
+            LoginComponent2: false,
             // 
             // Dados component login 02
             email: '',
@@ -108,11 +108,12 @@ h2{
         margin: 1rem 0rem;  
 }
 
-.container-mensagem-de-erro{
-    background: $primary01;
+.button-padrao-01{
     width: 40%;
     margin: 0 auto;
-    padding: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     border-radius: 6rem;
 
     p{

@@ -1,7 +1,7 @@
 <template>
     <div id="body">
             <form>
-                    <h1>SHOP3</h1>
+                    <h1>SHOP</h1>
                     <nav>
                         <router-link to="/login">Entrar</router-link>
                         <router-link to="/criar-conta">Criar conta</router-link>
@@ -33,10 +33,10 @@
         position: relative;
         padding: 3rem 2rem;
         width: 30%;
-        height: auto;
+        max-height: 85%;
+        overflow: auto;
         border-radius: 3rem;
         background: #fff;
-        filter: blur(0.1px);
         box-shadow: 1px 1px 2px 1px #00000090;
 
         display: flex;
@@ -88,6 +88,7 @@
         padding: 0.4rem 0.4rem;
         width: 100%;
         height: 100%;
+        max-height: 100%;
         border-radius: 0px;
 
         justify-content: start;
@@ -99,6 +100,7 @@ form{
     padding: 1rem 1rem;
     width: 80%;
     height: 80%;
+    max-height: 80%;
     border-radius: 5rem;
 
 

@@ -7,7 +7,6 @@
             <div class="container-email">
                 <input 
                 type="text" 
-                required 
                 v-model="email"
                 class="input-padrao"
                 >
@@ -17,7 +16,6 @@
             <div class="container-senha">
                 <input 
                 ype="password" 
-                required 
                 v-model="senha"
                 class="input-padrao"
                 >
@@ -25,7 +23,7 @@
             </div>
 
             <div class="container-button">
-                <button @click.prevent="Entrar">Entrar</button>
+                <button @click.prevent="Entrar" class="button-padrao-01">Entrar</button>
             </div>
         </div>
     </div>
@@ -78,33 +76,16 @@ export default {
             flex-direction: column-reverse;
         }
 
-        label{
-            color: $primary01;
-        }
     }
 
 
     .container-button{
         width: 100%;
-        border: 0px;
+        display: flex;
+        justify-content: center;
 
-        button{
+        .button-padrao-01{
             margin: 0 auto;
-            width: 30%;
-            color: #fff;
-            border: 0px;
-            border-radius: 0.6rem;
-            background: transparent;
-            height: 3rem;
-            background: $primary01;
-            cursor: pointer;
-            transition: 0.2s;
-            
-        }
-
-        button:hover{
-            transition: 0.2s;
-            background: $primary03;
         }
     }
 
