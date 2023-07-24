@@ -9,9 +9,6 @@
 <style lang="scss">
 // Classes Padõp
     .input-padrao{
-        width: 99%;
-        padding: 0.1rem;
-        height: 3rem;
         outline: none;
         border: 0px;
         border: 0.1rem solid $primary01;
@@ -28,10 +25,6 @@
         .input-padrao:focus + label{
         color: $primary01;
     }
-
-
-
-
 </style>
 
 
