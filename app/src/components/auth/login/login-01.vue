@@ -15,8 +15,13 @@
             </div>
 
             <div class="container-senha">
-                <input type="password" required v-model="senha">
-                <label for="input-text" >senha</label>
+                <input 
+                ype="password" 
+                required 
+                v-model="senha"
+                class="input-padrao"
+                >
+                <label for="input-text">senha</label>
             </div>
 
             <div class="container-button">
@@ -71,6 +76,10 @@ export default {
             margin: 3rem 0rem;
             display: flex;
             flex-direction: column-reverse;
+        }
+
+        label{
+            color: $primary01;
         }
     }
 
