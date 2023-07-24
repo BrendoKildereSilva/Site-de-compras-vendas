@@ -5,7 +5,12 @@
         <div class="container-inputs">
 
             <div class="container-email">
-                <input type="text" required v-model="email">
+                <input 
+                type="text" 
+                required 
+                v-model="email"
+                class="input-padrao"
+                >
                 <label for="input-text">E-mail</label>
             </div>
 

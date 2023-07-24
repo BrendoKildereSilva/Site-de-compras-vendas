@@ -2,30 +2,69 @@
     <div>
         <div class="container-nomes">
             <div>
-                <input type="text" id="input-nome" @keyup="ValidarCampoNome" v-model="nome" required>
-                <label for="input-nome">Nome</label>
+                <input 
+                type="text" 
+                d="input-nome" 
+                @keyup="ValidarCampoNome" 
+                v-model="nome" required
+                class="input-padrao"
+                >
+                <label 
+                for="input-nome"
+                class="label-com-animacao"
+                >Nome</label>
                 <p class="Mensagem-de-erro"> {{ MensagemDeErroNome}} </p>
             </div>
 
             <div>
-                <input type="text" id="input-sobrenome" @keyup="ValidarCampoSobrenome" v-model="sobrenome" required>
-                <label for="input-sobrenome">Sobrenome (Opcional)</label>
+                <input 
+                type="text" 
+                id="input-sobrenome" 
+                @keyup="ValidarCampoSobrenome" 
+                v-model="sobrenome" required
+                class="input-padrao"
+                >
+                <label 
+                for="input-sobrenome" 
+                class="label-com-animacao"
+                >
+                Sobrenome (Opcional)</label>
                 <p class="Mensagem-de-erro"> {{ MensagemDeErroSobrenome}} </p>
             </div>
 
         </div>
 
         <div class="container-email">
-                <input type="text" id="input-email" @keyup="ValidarCampoEmail" v-model="email" required>
-                <label for="input-email">Email</label>
+                <input 
+                type="text" 
+                id="input-email" 
+                @keyup="ValidarCampoEmail" 
+                v-model="email" required
+                class="input-padrao"
+                >
+                <label 
+                for="input-email"
+                class="label-com-animacao"
+                >Email</label>
                 <p class="Mensagem-de-erro"> {{ MensagemDeErroEmail}} </p>
         </div>
 
 
         <div class="container-senhas">
             <div>
-                <input type="password" @keyup.prevent="ValidarCampoSenha" id="input-senha" v-model="senha" required>
-                <label for="input-senha">senha</label>
+                <input 
+                type="password"
+                @keyup.prevent="ValidarCampoSenha" 
+                id="input-senha" 
+                v-model="senha" 
+                required
+                class="input-padrao"
+                >
+                <label
+                for="input-senha"
+                class="label-com-animacao"
+                >
+                senha</label>
                 <p class="Mensagem-de-erro"> {{ MensagemDeErroSenha}} </p>
             </div>
 
@@ -35,8 +74,12 @@
                 id="input-confirm-senha" 
                 @keyup="ValidarCampoConfirmsenha"
                 v-model="confirmsenha" required
+                class="input-padrao"
                 >
-                <label for="input-confirm-senha">confirmar senha</label>
+                <label 
+                for="input-confirm-senha"
+                class="label-com-animacao"
+                >confirmar senha</label>
                 <p class="Mensagem-de-erro"> {{ MensagemDeErroConfirmsenha}} </p>
             </div>
         </div>
@@ -54,28 +97,12 @@
 <style lang="scss" scoped>
 
 
-input{
-    border: 0.1rem solid #ccc;
-    border-radius: 0.6rem   ;
-    outline: none;
-    width: 99%;
-    height: 3rem;
-    font-size: 1.4rem;
-    
-    padding: 0.1rem;
-}
 
-input:focus{
-    border: 0.2rem solid $primary01;
-}
 
-input:focus + label,
-input:valid + label{
+
+.input-padrao:focus + .label-com-animacao{
     top: -15px;
     left: 0px;
-
-    transition: 0.2s;
-    color: $primary01;
 }
 
 label{
