@@ -15,7 +15,7 @@
 
             <div class="container-senha">
                 <input 
-                ype="password" 
+                type="password" 
                 v-model="senha"
                 class="input-padrao"
                 >
@@ -53,7 +53,7 @@ export default {
                     'senha': this.senha
                 }
 
-                this.$emit('Entrar', DadosDaEtapa)
+                this.$emit('ButtonEntrar', DadosDaEtapa)
             }
             else
             {

@@ -10,7 +10,7 @@
         <Login01 
         v-if="this.LoginComponent1 == true"
         :PropsMesangemDeErro="MesangemDeErro"
-        @Entrar="EmicaoEntrar"
+        @ButtonEntrar="EmicaoEntrar"
         @MensagemDeErro="EmisaoFunctionMensagemDeErro"
         ></Login01>
 
@@ -22,6 +22,10 @@
 
         :PropsMesangemDeErro="MesangemDeErro"
         
+        @ButtonVoltar="EmicaoButtonVoltar"
+        @MensagemDeErro="EmisaoFunctionMensagemDeErro"
+        @ButtonEntrar="EmicaoEntrar"
+
         ></Login02>
     </div>
 </template>
@@ -49,6 +53,15 @@ export default {
     },
 
     methods:{
+       
+        // Emicao do component LOGIN 02
+        EmicaoButtonVoltar(){
+            this.LoginComponent1 = true
+            this.LoginComponent2 = false
+        },
+
+         // Emicao que funciona para ambos components 01 e 02
+
         EmicaoEntrar(DadosDoCamponent){
         this.email = DadosDoCamponent.email
         let form = new FormData();
@@ -58,9 +71,7 @@ export default {
         axios.post('http://localhost:8080/login', form).then(Response => {
 
                 var mensagem = Response.data.mensagem
-                let foto_perfil = Response.data.foto_perfil
-
-                console.log(Response.data)
+                let url_foto_perfil = Response.data.foto_perfil
 
                 if(mensagem == 'Dados invalidos'){
                     this.MesangemDeErro = mensagem
@@ -70,7 +81,7 @@ export default {
                     this.ShowMensagemDeErro = false
                     
                     this.MesangemDeErro = mensagem
-                    this.UrlFotoPerfilUser = foto_perfil
+                    this.UrlFotoPerfilUser = url_foto_perfil
 
                     this.LoginComponent1 = false
                     this.LoginComponent2 = true
@@ -78,9 +89,9 @@ export default {
                     
                 }
                 else if(mensagem == 'Dados validos'){
-                    this.MesangemDeErro = mensagem
-                    this.ShowMensagemDeErro = true
-
+                    var token = Response.data.token
+                    localStorage.setItem('token', token)
+                    this.$router.push('/')
                 }
             })
         },
@@ -109,7 +120,9 @@ h2{
 }
 
 .button-padrao-01{
-    width: 40%;
+    padding: 0.2rem 0rem;
+    margin: 1rem 0rem;
+    width: 70%;
     margin: 0 auto;
     display: flex;
     align-items: center;
@@ -119,6 +132,12 @@ h2{
     p{
         text-align: center;
         color: #fff;
+    }
+}
+
+@media(max-width: 700px){
+    .button-padrao-01{
+        width: 80%;
     }
 }
 </style>

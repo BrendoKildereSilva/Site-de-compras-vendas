@@ -20,17 +20,19 @@
         color: #707070;
     }   
 
-        .input-padrao:focus{
+    .input-padrao:focus{
         border: 0.1rem solid $primary01;
         transition: 0.4s;
     }
 
-
+    .input-padrao + label{
+        color: $primary01;
+    }
+    
     .input-padrao:valid + label,
     .input-padrao:focus + label{
         top: -15px;
         left: 0px;
-        color: $primary01;
     }
 
     .button-padrao-01{

@@ -17,12 +17,13 @@
                 type="password" 
                 id="input-senha"
                 class="input-padrao"
+                v-model="senha"
                 >
-                <button class="button-padrao-01">Entrar</button>
+                <button class="button-padrao-01" @click.prevent="ButtonEntrar">Entrar</button>
             </div>
 
             <div class="container-button">
-                <button class="button-padrao-02">voltar</button>
+                <button class="button-padrao-02" @click.prevent="Buttonvoltar">voltar</button>
             </div>
         </div>
 
@@ -36,6 +37,35 @@ export default {
     props:{
         PropsEmail: String,
         PropsUrlFotoPerfilUser: String
+    },
+
+    data(){
+        return{
+            senha: undefined,
+        }
+    },
+    
+    methods:{
+        ButtonEntrar(){
+            if(!this.senha){
+                this.$emit('MensagemDeErro', 'Preencha o campo')
+            }    
+            else{
+                var DadosDaEtapa = {
+                    "email": this.PropsEmail,
+                    "senha": this.senha
+                }
+
+                this.$emit('ButtonEntrar', DadosDaEtapa)
+
+
+            }
+        },
+
+        
+        Buttonvoltar(){
+            this.$emit('ButtonVoltar')
+        }
     }
 }
 
@@ -54,6 +84,7 @@ export default {
     
         p{
             color: $primary01;
+            text-align: center;
         }
 
         img{
@@ -96,7 +127,7 @@ export default {
     }
     }
 
-    @media(max-width: 300px){
+    @media(max-width: 400px){
         .container-main{
 
             img{
