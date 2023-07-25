@@ -106,7 +106,7 @@ class JWT
         }
         $tks = \explode('.', $jwt);
         if (\count($tks) !== 3) {
-            throw new UnexpectedValueException('Wrong number of segments');
+            throw new UnexpectedValueException('token invalido');
         }
         list($headb64, $bodyb64, $cryptob64) = $tks;
         $headerRaw = static::urlsafeB64Decode($headb64);

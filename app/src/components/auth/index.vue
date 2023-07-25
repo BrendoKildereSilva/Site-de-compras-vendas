@@ -12,6 +12,37 @@
     </div>
 </template>
 
+<script>
+import axios from 'axios';
+export default {
+    
+    mounted(){
+        this.Verificando();
+    },
+
+    methods:{
+
+        // Verificando se o user já estar autentificado
+        Verificando(){
+            var token = localStorage.getItem('token');
+
+
+            if(token){
+                var form = new FormData();
+                form.append('token', token);
+
+                axios.post('http://localhost:8080/analiza-token', form).then(Reponse => { 
+
+                    if(Reponse.data.mensagem == 'token valido'){
+                        this.$router.push('/');
+                    }
+                })
+            }
+        }    
+    }
+}
+</script>
+
 
 <style lang="scss" scoped>
 #body{

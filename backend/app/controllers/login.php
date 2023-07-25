@@ -7,4 +7,8 @@ class login{
     function FunctionLogin(){
         controller::GerarViews('ComponentLogin');
     }
+
+    function FunctionAnalizarToken(){
+        controller::GerarViews('AnalizarToken');
+    }
 }

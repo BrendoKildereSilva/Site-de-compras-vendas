@@ -21,7 +21,7 @@ function load(String $controller, String $action){
         
     }
         catch(Exception $e){
-        echo $e->getMessage();
+    echo $e->getMessage();
 
     }
 
@@ -33,7 +33,9 @@ $routers = [
     ], 
     "POST" => [
         "/login" => fn() => load('login', 'FunctionLogin'),
+        "/analiza-token" => fn() => load('login', 'FunctionAnalizarToken'),
         "/criar-conta" => fn() => load('CriarConta', 'FunctionCriarNovoUser'),
         "/criar-conta/verificar-email" => fn() => load('CriarConta', 'FunctionVerificarEmail'),
+        
     ] 
 ];
