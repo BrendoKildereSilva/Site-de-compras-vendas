@@ -1,5 +1,13 @@
 <template>
     <div>
-        <span>bom duia</span>
+        INDEX
     </div>
 </template>
+
+<script>
+export default {
+    mounted(){
+        
+    }
+}
+</script>
