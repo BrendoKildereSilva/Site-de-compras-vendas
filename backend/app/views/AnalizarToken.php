@@ -26,8 +26,13 @@ $cod_mysql_buscar_dados->execute();
 $resultado_da_busca_de_dados = $cod_mysql_buscar_dados->fetchALL(PDO::FETCH_ASSOC);
 
 
-
+$dados_user['nome'] = $resultado_da_busca_de_dados[0]['nome'];
+$dados_user['sobrenome'] = $resultado_da_busca_de_dados[0]['sobrenome'];
+$dados_user['email'] = $resultado_da_busca_de_dados[0]['email'];
+$dados_user['url_foto_perfil'] = functions::urls()['banco-de-imagens']['foto_perfil_users'] . $resultado_da_busca_de_dados[0]['foto_perfil'];
+// 
 $reposta_client['mensagem'] = 'token valido';
-$reposta_client['dados_user'] = $resultado_da_busca_de_dados;
+
+$reposta_client['dados_user'] = $dados_user;
 echo json_encode($reposta_client);
 

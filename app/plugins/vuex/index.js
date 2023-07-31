@@ -7,7 +7,7 @@ const store = createStore({
         "nome_user": "test",
         "sobrenome_user": "test",
         "email_user": "test",
-        "foto_perfil_user": "test"
+        "url_foto_perfil_user": "test"
       }
     }
 })

@@ -36,12 +36,12 @@ export default {
             axios.post('http://localhost:8080/analiza-token', form).then(Reponse => { 
                 
                 if(Reponse.data.mensagem == 'token valido'){
-                    
+                    console.log(Reponse.data)
                     // Adicionado os dados padrão do user ao veu ex
-                    this.$store.state.nome_user = Reponse.data.dados_user[0].nome;
-                    this.$store.state.sobrenome_user = Reponse.data.dados_user[0].sobrenome;
-                    this.$store.state.email_user = Reponse.data.dados_user[0].email;
-                    this.$store.state.foto_perfil_user = Reponse.data.dados_user[0].foto_perfil;
+                    this.$store.state.nome_user = Reponse.data.dados_user.nome;
+                    this.$store.state.sobrenome_user = Reponse.data.dados_user.sobrenome;
+                    this.$store.state.email_user = Reponse.data.dados_user.email;
+                    this.$store.state.url_foto_perfil_user = Reponse.data.dados_user.url_foto_perfil;
 
                 }
                 else{
