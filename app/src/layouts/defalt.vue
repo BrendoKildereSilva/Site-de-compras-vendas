@@ -25,7 +25,7 @@
         transition: 0.4s;
     }
 
-    .input-padrao + label{
+    .input-padrao + label, .label-padrao{
         color: $primary01;
     }
     
@@ -64,6 +64,11 @@
 
     .button-padrao-02:hover{
         color:$primary01
+    }
+
+    .mensagem-de-erro{
+        color: $red01;
+        font-size: 1.3rem;
     }
 </style>
 

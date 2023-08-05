@@ -30,6 +30,12 @@ const routers = [
         name: 'page-index',
         component: ImportComponent('/app/index.vue'),
         meta: {'layout': 'layout-auth'},
+    },
+    {
+        path: '/publicar', 
+        name: 'page-publicar',
+        component: ImportComponent('/app/publicar/index.vue'),
+        meta: {'layout': 'layout-auth'},
     }
 ];
 

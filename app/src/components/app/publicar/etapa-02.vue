@@ -1,5 +1,5 @@
 <template>
     <div>
-        publicar
+        ETAPA 02
     </div>
 </template>
