@@ -12,7 +12,9 @@
             @ProximaEtapa="EmicaoProximaEtapa"
             ></Etapa01>
 
-            <Etapa-02>
+            <Etapa-02 
+            v-if="this.Component02 == true"
+            >
             </Etapa-02>
         </form>
     </main>
@@ -80,9 +82,9 @@ export default {
             // Modo
             TitleH1: "Criar publição",
             // 
-            Component01: true,
+            Component01: false,
             Component02: true,
-            Component03: true,
+            Component03: false,
             // dados do component 01
             titulo: "",
             preco: "",
