@@ -152,14 +152,14 @@ export default {
     justify-content: center;
 
     p{
-        color: $primary01;
+        color: red;
         text-align: center;
     }
     .preview-imagem{
         margin: 1rem 0rem;
         width: 20rem;
         height: 20rem;
-        border: 0.1rem dashed $primary01;
+        border: 0.1rem dashed red;
         margin-bottom: 1rem;
         overflow: hidden;
         display: flex;
@@ -186,7 +186,7 @@ export default {
     }
 
     .mensagem-de-erro{
-        color: $red01;
+        color: red;
         font-size: 1.5rem;  
     }
 }

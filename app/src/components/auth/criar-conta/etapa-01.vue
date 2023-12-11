@@ -123,7 +123,7 @@ label{
 
 
 .Mensagem-de-erro{
-    color: $red01;
+    color: red;
     font-size: 1.2rem;
 }
 

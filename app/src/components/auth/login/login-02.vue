@@ -83,7 +83,7 @@ export default {
 
     
         p{
-            color: $primary01;
+            color: red;
             text-align: center;
         }
 
@@ -100,7 +100,7 @@ export default {
             flex-direction: column;
 
             label{
-                color: $primary01;
+                color: red;
             }
 
             .button-padrao-01{
